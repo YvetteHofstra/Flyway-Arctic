@@ -13,6 +13,13 @@ snowmelt<-read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQsQW1IpTBbS
 #Calculates average snow melt date for each year
 snowpeak<- snowmelt %>% group_by(Year)%>%
   summarize(AveregeSnowMeltday = mean(Snowmelt))
+
+#Plots average snow melt date for each year with 1 average for plots
+ggplot(snowpeak, aes( x = Year, y = AveregeSnowMeltday))+
+  geom_line()+
+  geom_point()+
+  theme_classic()
+
 #Plots average snow melt date for each year and for each plot
 ggplot(snowpeak, aes( x = Year, y = AveregeSnowMeltday))+
   geom_line(data = snowmelt, aes( x = Year, y = Snowmelt, color = Plot.ID))+
