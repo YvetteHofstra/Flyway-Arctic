@@ -65,8 +65,8 @@ plotting <- result %>%
 ggplot(plotting, aes( x = Year))+
   geom_line(aes(y = AveregeSnowMeltday),color = "black")+
   geom_point(aes(y = AveregeSnowMeltday), color = "black")+
-  geom_line(aes(y = InsectPeakday), color = "red")+
-  geom_point(aes(y = InsectPeakday), color = "red")+
+  geom_line(aes(y = InsectPeakday), color = "blue")+
+  geom_point(aes(y = InsectPeakday), color = "blue")+
   theme_classic()
 #Plotting insect peak vs snowmelt
 
