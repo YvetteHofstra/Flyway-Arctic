@@ -153,3 +153,6 @@ ggplot(plotting, aes( x = Year, y = Difference, color = Plot.ID))+
   geom_point(aes(shape = as.factor(Year)), size = 3)+
   theme_classic()
 
+
+
+
