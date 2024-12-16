@@ -83,6 +83,11 @@ ggplot(plotting, aes( x = AveregeSnowMeltday, y = Difference))+
   geom_point()+
   theme_classic()
 
+ggplot(plotting, aes( x = Year, y = Difference))+
+  geom_line()+
+  geom_point()+
+  theme_classic()
+
 #################PER PLOT##############################################################
 library(dplyr)
 library(ggplot2)
@@ -101,7 +106,7 @@ output <- insect %>%
   ungroup() %>%
   group_by(year, doy, Plot.ID) %>%
   summarize(DailyBiomass = sum(Biomass), .groups = "drop") %>%
-  group_by(year) %>%
+  group_by(year, Plot.ID) %>%
   arrange(doy) %>%
   mutate(runningtotal = cumsum(DailyBiomass)) %>%
   select(year, InsectPeakday = doy, runningtotal, Plot.ID)
