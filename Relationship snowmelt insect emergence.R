@@ -51,8 +51,13 @@ plotting <- result %>%
   mutate(Difference = InsectPeakday - AveregeSnowMeltday)
                    
 ########## Trying some models ##########
+<<<<<<< HEAD
 m1<- lm(InsectPeakday ~ AveregeSnowMeltday, data = plotting)
 summary(m1)
+=======
+m1<- 
+
+>>>>>>> 3ef592df4ada53e4511f87cfdffcdf3d379fd1d2
 
 m2<-glm(InsectPeakday ~ AveregeSnowMeltday, data = plotting, family = "poisson")
 summary(m2)
