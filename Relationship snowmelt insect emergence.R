@@ -53,8 +53,26 @@ plotting <- result %>%
 ########## Trying some models ##########
 m1<- lm(InsectPeakday ~ AveregeSnowMeltday, data = plotting)
 summary(m1)
+#not significant
+
+#response factor is in integers, therefore we use poisson
 m2<-glm(InsectPeakday ~ AveregeSnowMeltday, data = plotting, family = "poisson")
 summary(m2)
+#not significant
+
+#use year as random factor
+m3<- lmer(InsectPeakday ~ AveregeSnowMeltday + (1|Year), data = plotting)
+summary(m3)
+#not significant
+
+m4<- lmer(InsectPeakday ~ AveregeSnowMeltday + (1|Plot.ID), data = plotting)
+summary(m4)
+#not significant
+
+#both year and plot as random factors
+m5<- lmer(InsectPeakday ~ AveregeSnowMeltday + (1|Year) + (1|Plot.ID), data = plotting)
+summary(m5)
+#not significant
 
 
                   
