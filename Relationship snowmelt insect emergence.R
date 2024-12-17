@@ -14,7 +14,7 @@ insect<-read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTq7-xuTeasMbB
 snowmelt<-read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQsQW1IpTBbS7PK4z8e3BvXjWHCJYST2puqkeq0cOgILjYtCHj3JNV5DfwgfcJxpktqnFo-PveIs49T/pub?output=csv")
                    
 ########## Trying some models ##########
-m1<- lmer(InsectPeakday ~ AveregeSnowMeltday + (1|Year), data = plotting)
+m1<- 
 
 
 
