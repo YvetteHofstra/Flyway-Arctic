@@ -154,5 +154,12 @@ ggplot(plotting, aes( x = Year, y = Difference, color = Plot.ID))+
   theme_classic()
 
 
+########## Trying some models ##########
+# install.packages("lme4")
+# install.packages("lmerTest")
+library(lme4)  # for linear mixed models
+library(lmerTest)  # and testing their significance
+
+m1<-
 
 
