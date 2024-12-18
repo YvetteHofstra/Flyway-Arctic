@@ -7,8 +7,8 @@ library(dplyr)
 library(ggplot2)
 
 #load data
-insect<-read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTq7-xuTeasMbBQ366icvMvTduhKvMTsuk89mFN0lR_UzHqs67CdXmuDgs-NEuZNeBHZsmMy9LpM4Sz/pub?output=csv")
-snowmelt<-read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQsQW1IpTBbS7PK4z8e3BvXjWHCJYST2puqkeq0cOgILjYtCHj3JNV5DfwgfcJxpktqnFo-PveIs49T/pub?output=csv")
+insect<-read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTq7-xuTeasMbBQ366icvMvTduhKvMTsuk89mFN0lR_UzHqs67CdXmuDgs-NEuZNeBHZsmMy9LpM4Sz/pub?output=csv")
+snowmelt<-read.csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQsQW1IpTBbS7PK4z8e3BvXjWHCJYST2puqkeq0cOgILjYtCHj3JNV5DfwgfcJxpktqnFo-PveIs49T/pub?output=csv")
 
 #Calculates average snow melt date for each year
 snowpeak<- snowmelt %>% group_by(Year)%>%
@@ -152,14 +152,5 @@ ggplot(plotting, aes( x = Year, y = Difference, color = Plot.ID))+
   geom_line(size = 1)+
   geom_point(aes(shape = as.factor(Year)), size = 3)+
   theme_classic()
-
-
-########## Trying some models ##########
-# install.packages("lme4")
-# install.packages("lmerTest")
-library(lme4)  # for linear mixed models
-library(lmerTest)  # and testing their significance
-
-m1<-
 
 
