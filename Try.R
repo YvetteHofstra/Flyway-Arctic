@@ -117,15 +117,17 @@ result <- combined %>%
   slice_max(runningtotal)
 
 
+#creates a dataframe with the snowmelt data
+plotting <- result %>%
+  inner_join(snowpeak, by = c("Year", "Plot.ID"))%>%
+  mutate(Difference = InsectPeakday - AveregeSnowMeltday)
 
-
-
+# make graph
 ggplot(plotting, aes(x = AveregeSnowMeltday, y = InsectPeakday, 
                      color = Plot.ID, linetype = Plot.ID)) +
   geom_line(size = 1) +
   geom_point() +
   theme_classic()
 
-
-
+###########################
 
